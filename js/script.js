@@ -1,4 +1,9 @@
-import readline from "https://esm.sh/readline";
+import BudgetTracker from "./BudgetTracker.js";
+
+new BudgetTracker("#app");
+
+
+
 let randomPaycheckArr = [525, 601, 498, 494, 700];
 function generateRandomPaycheckArr(amountOfPaychecks) {
   let currentPaycheckArr = [];
@@ -32,6 +37,6 @@ function getArrayAverage(arr) {
 
 let myStatement = `The paychecks are  ${randomPaycheckArr}. The average is ${getArrayAverage(randomPaycheckArr)}.`;
 
-console.log(myStatement)
+console.log(myStatement + "hi")
 
 document.getElementById("statementText").innerHTML = myStatement
