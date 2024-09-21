@@ -1,0 +1,58 @@
+/*https://www.youtube.com/watch?v=OnML-5Mk70o&list=PLZ6LuWi3_O88KHJ_hTYEX9PZpJKow4Pwc&index=16&ab_channel=dcode 
+22 minutes in */
+
+
+
+body {
+    background-color: #a67b5b
+  }
+  .budget-tracker { /*entire table */
+    border-collapse: collapse;
+    min-width: 750px;
+  }
+  .budget-tracker * { /*Every element inside table*/
+    font-family: sans-serif;
+  }
+  .budget-tracker th {/*Every table header cell*/
+    text-align: left;
+    padding: 10px 20px;
+    border-bottom: 2px solid #009578;
+  }
+  .budget-tracker td {/*Every cell in table*/
+    padding: 5px;
+  }
+  .input,
+  .delete-entry {
+    height: 30px;
+    font-size: 13px;
+    padding: 0 10px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  .input {
+    border: 1px solid teal;
+    border-radius: 5px;
+    outline: none;
+  }
+  .input:focus {
+    border-color: teal;
+    outline: solid 2px;
+  }
+  .delete-entry {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    background: none;
+    color: red;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  .delete-entry:hover {
+    background: rgb(255, 0, 0, 0.1);
+  }
+  .controls,
+  .summary {
+    text-align: right;
+  }

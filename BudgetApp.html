@@ -1,0 +1,60 @@
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+      <title>Budget Planner</title>
+    </head>
+    
+    <body>
+    
+      <div id="app">
+        <table class="budget-tracker">
+          <thread>
+            <tr>
+              <th>Date</th>
+              <th>Description</th>
+              <th>Type</th>
+              <th>Amount</th>
+              <th></th>
+            </tr>
+          </thread>
+          <tbody class="entries">
+            <tr>
+                <td>
+                  <input class="input input-date" type="date">
+                </td>
+                  <td>
+                  <input class="input input-description" type="text" placeholder="Add A Description">
+                </td>
+                <td>
+                    <select class="input input-type">
+                      <option value="">Select Type</option>
+                      <option value="income">Income</option>
+                      <option value="expense">Expense</option>
+                 </td>
+                  <td>
+                  <input class="input input-amount" type="number"> 
+                </td>
+              <td>
+                  <button class="delete-entry" type="button">&#10005</button 
+                </td>
+            </tr>
+          </tbody>
+          <tbody>
+            <tr>
+            <td colspan="5" class="controls">
+              <button type="button" class="new-entry">New Entry</button>
+            </td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="5" class="summary">
+                <strong>Total:</strong>
+                <span class="total">$0.00</span>
+              </td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <p id="statementText"></p>
+    </body>
+    
