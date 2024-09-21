@@ -76,7 +76,16 @@ export default class BudgetTracker {
 
     }
     save() {
-
+        const data = this.getEntryRows().map(row => { //converts local storage data into object
+            return {
+                date: row.querySelector(".input-date").value,
+                description: row.querySelector(".input-description").value,
+                type: row.querySelector(".input-type").value,
+                amount: parseFloat(row.querySelector(".input-amount").value),
+            }
+        })
+        localStorage.setItem("Budget-Tracker-entries", JSON.stringify(data));
+        this.updateSummary();
     }
     addEntry(entry = {}) {
         this.root.querySelector(".entries").insertAdjacentHTML("beforeend", BudgetTracker.entryHTML())
@@ -89,9 +98,12 @@ export default class BudgetTracker {
         row.querySelector(".delete-entry").addEventListener("click", e => {
             this.onDeleteEntryBtnClick(e)
         })
+        row.querySelectorAll(".input").forEach(input => {
+            input.addEventListener("change", () => this.save())
+        })
     }
     getEntryRows() {
-
+        return Array.from(this.root.querySelectorAll(".entries tr"))
     }
     onNewEntryBtnClick() {
         this.addEntry();
