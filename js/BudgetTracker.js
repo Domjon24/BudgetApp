@@ -73,7 +73,18 @@ export default class BudgetTracker {
         this.updateSummary()
     }
     updateSummary() {
-
+        const total = this.getEntryRows().reduce((total, row) => {
+            const amount = row.querySelector(".input-amount").value
+            const isExpense = row.querySelector(".input-type").value === "expense";
+            const modifier = isExpense ? -1 : 1;
+            return total + (amount * modifier)
+        }, 0);
+        
+        const totalFormatted = new Intl.NumberFormat("en-US", {
+            style: "currency",
+            currency: "USD"
+        }).format(total)
+        this.root.querySelector(".total").textContent = totalFormatted
     }
     save() {
         const data = this.getEntryRows().map(row => { //converts local storage data into object
@@ -109,6 +120,7 @@ export default class BudgetTracker {
         this.addEntry();
     }
     onDeleteEntryBtnClick(e) {
-        console.log("Entry Deleted")
+        e.target.closest("tr").remove();
+        this.save()
     }
 }
