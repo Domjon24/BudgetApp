@@ -1,9 +1,9 @@
 export default class BudgetTracker {
     constructor(querySelectorString) {
         this.root = document.querySelector(querySelectorString);
-       this.root.innerHTML = BudgetTracker.html();
-       this.root.querySelector(".new-entry").addEventListener("click", () => {
-        this.onNewEntryBtnClick();
+        this.root.innerHTML = BudgetTracker.html();
+        this.root.querySelector(".new-entry").addEventListener("click", () => {
+            this.onNewEntryBtnClick();
        });
        //load inital data from local storage
        this.load()
