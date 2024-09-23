@@ -9,7 +9,8 @@ export default class BudgetTracker {
        this.load()
     }
     static html() {
-        return `<table class="budget-tracker">
+        return `
+        <table class="budget-tracker">
           <thread>
             <tr>
               <th>Date</th>
@@ -25,7 +26,7 @@ export default class BudgetTracker {
           </tbody>
           <tbody>
             <tr>
-            <td colspan="5" class="controls">
+            <td colspan="5" class="controls"> 
               <button type="button" class="new-entry">New Entry</button>
             </td>
             </tr>
