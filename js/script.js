@@ -5,7 +5,6 @@ import BudgetTracker from "./BudgetTracker.js"; //main from project
 import FusionCharts from 'fusioncharts/core';
 import TimeSeries from 'fusioncharts/viz/timeseries';
 import DataStore from 'fusioncharts/datastore';
-
 import data from './data';
 import schema from './schema';
 
